@@ -11,6 +11,7 @@ import CoreData
 struct ContentView: View {
     
     // MARK: - Properties
+    @Environment(\.managedObjectContext) private var viewContext
     @State private var showingAddTodoView: Bool = false
 
     // MARK: - Body
@@ -30,10 +31,10 @@ struct ContentView: View {
             }))
             .sheet(isPresented: $showingAddTodoView, content: {
                 AddTodoView()
+                    .environment(\.managedObjectContext, self.viewContext)
             })
             
         }//: Navigation
-        
         
     }
 
@@ -43,5 +44,6 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+            .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
     }
 }
