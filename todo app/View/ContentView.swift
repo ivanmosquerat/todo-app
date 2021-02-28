@@ -12,6 +12,7 @@ struct ContentView: View {
     
     // MARK: - Properties
     @Environment(\.managedObjectContext) private var viewContext
+    @FetchRequest(entity: Todo.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \Todo.name, ascending: true)]) var todos: FetchedResults<Todo>
     @State private var showingAddTodoView: Bool = false
 
     // MARK: - Body
@@ -19,8 +20,16 @@ struct ContentView: View {
         
         NavigationView{
             
-            List(0..<5) { item in
-                Text("Hello world")
+            List{
+                ForEach(self.todos, id: \.self){ todo in
+                    HStack{
+                        Text(todo.name ?? "Unknown")
+                        
+                        Spacer()
+                        
+                        Text(todo.priority ?? "Undefined")
+                    }
+                }//: Loop
             }//: List
             .listStyle(InsetListStyle())
             .navigationBarTitle("Task", displayMode: .inline)
@@ -44,6 +53,6 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
-            .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
+            .environment(\.managedObjectContext, PersistenceController.shared.container.viewContext)
     }
 }
