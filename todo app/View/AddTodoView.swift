@@ -25,8 +25,13 @@ struct AddTodoView: View {
         NavigationView{
             VStack {
                 
-                Form{
-                    TextField("Todo", text: $name)
+                VStack(alignment: .leading, spacing: 20){
+                    
+                    TextField("Task name", text: $name)
+                        .padding()
+                        .background(Color(UIColor.tertiarySystemFill))
+                        .cornerRadius(8)
+                        .font(.system(size: 18, weight: .semibold, design: .default))
                     
                     Picker("Priority", selection: $priority){
                         ForEach(priorities, id: \.self){
@@ -44,7 +49,7 @@ struct AddTodoView: View {
                             
                             do{
                                 try self.viewContext.save()
-                                print("Name: \(todo.name ?? "")")
+                               
                             }catch{
                                 print(error)
                             }
@@ -60,9 +65,17 @@ struct AddTodoView: View {
                         self.presentationMode.wrappedValue.dismiss()
                         
                     }, label: {
-                        Text("Save")
+                        Text("Save Task")
+                            .font(.system(size: 20, weight: .bold, design: .default))
+                            .padding()
+                            .frame(minWidth: 0, maxWidth: .infinity)
+                            .background(Color.blue)
+                            .cornerRadius(8)
+                            .foregroundColor(.white)
                     })//: Button
-                }//: Form
+                }//: VStack
+                .padding(.horizontal)
+                .padding(.vertical, 30)
                 
                 Spacer()
                 
@@ -86,6 +99,7 @@ struct AddTodoView: View {
 struct AddTodoView_Previews: PreviewProvider {
     static var previews: some View {
         AddTodoView()
+            .preferredColorScheme(.dark)
             .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
     }
 }
