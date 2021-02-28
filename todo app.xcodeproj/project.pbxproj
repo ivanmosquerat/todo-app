@@ -13,6 +13,7 @@
 		2459160425E9285F00871715 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2459160325E9285F00871715 /* Preview Assets.xcassets */; };
 		2459160625E9285F00871715 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2459160525E9285F00871715 /* Persistence.swift */; };
 		2459160925E9285F00871715 /* todo_app.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2459160725E9285F00871715 /* todo_app.xcdatamodeld */; };
+		245B489B25EB62770094C1AB /* EmptyListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245B489A25EB62770094C1AB /* EmptyListView.swift */; };
 		2473E61225E9F58A005E90F7 /* AddTodoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2473E61125E9F58A005E90F7 /* AddTodoView.swift */; };
 /* End PBXBuildFile section */
 
@@ -25,6 +26,7 @@
 		2459160525E9285F00871715 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		2459160825E9285F00871715 /* todo_app.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = todo_app.xcdatamodel; sourceTree = "<group>"; };
 		2459160A25E9285F00871715 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		245B489A25EB62770094C1AB /* EmptyListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyListView.swift; sourceTree = "<group>"; };
 		2473E61125E9F58A005E90F7 /* AddTodoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTodoView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -82,6 +84,7 @@
 			children = (
 				245915FE25E9285B00871715 /* ContentView.swift */,
 				2473E61125E9F58A005E90F7 /* AddTodoView.swift */,
+				245B489A25EB62770094C1AB /* EmptyListView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -157,6 +160,7 @@
 			files = (
 				2459160625E9285F00871715 /* Persistence.swift in Sources */,
 				245915FF25E9285B00871715 /* ContentView.swift in Sources */,
+				245B489B25EB62770094C1AB /* EmptyListView.swift in Sources */,
 				245915FD25E9285B00871715 /* todo_appApp.swift in Sources */,
 				2459160925E9285F00871715 /* todo_app.xcdatamodeld in Sources */,
 				2473E61225E9F58A005E90F7 /* AddTodoView.swift in Sources */,
