@@ -23,8 +23,26 @@ struct SettingsView: View {
                     // MARK: - Section 1
                     Section(header: Text("App icon")){
                         
-                        Picker(selection: $iconSettings.currentIndex, label: Text("App icons")){
-                            
+                        Picker(selection: $iconSettings.currentIndex, label:
+                                
+                                HStack {
+                                    ZStack {
+                                        
+                                        RoundedRectangle(cornerRadius: 8, style: .continuous)
+                                            .strokeBorder(Color.primary, lineWidth: 2)
+                                            
+                                        Image(systemName: "paintbrush")
+                                            .font(.system(size: 28, weight: .regular, design: .default))
+                                            .foregroundColor(Color.primary)
+                                    }
+                                    .frame(width: 44, height: 44)
+                                    
+                                    Text("App icons".uppercased())
+                                        .fontWeight(.bold)
+                                        .foregroundColor(Color.primary)
+                                })//: Label
+                        
+                        {
                             ForEach(0..<iconSettings.iconNames.count){ index in
                                 
                                 HStack{
