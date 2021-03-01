@@ -11,11 +11,13 @@ import CoreData
 struct ContentView: View {
     
     // MARK: - Properties
+    @EnvironmentObject var iconSettings: IconName
     @Environment(\.managedObjectContext) private var viewContext
     @FetchRequest(entity: Todo.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \Todo.name, ascending: true)]) var tasks: FetchedResults<Todo>
     @State private var showingAddTodoView: Bool = false
     @State private var animatingButton: Bool = false
-
+    @State private var showingSettingsView: Bool = false
+    
     // MARK: - Body
     var body: some View {
         
@@ -37,7 +39,18 @@ struct ContentView: View {
                 }//: List
                 .listStyle(InsetListStyle())
                 .navigationBarTitle("Task", displayMode: .inline)
-                .navigationBarItems( leading: EditButton())
+                .navigationBarItems( leading: EditButton(),
+                    trailing: Button(action:{
+                        showingSettingsView.toggle()
+                    }){
+                        Image(systemName: "gear")
+                            .imageScale(.large)
+                    }//: Settings button
+                    .sheet(isPresented: $showingSettingsView, content: {
+                        SettingsView()
+                            .environmentObject(iconSettings)
+                    })
+                )
                 
                 
                 // MARK: - No task items
@@ -63,6 +76,7 @@ struct ContentView: View {
                                 
                             Image(systemName: "plus.circle")
                                 .font(.title3)
+                                
                         }
                         
                     })//: Add button
@@ -73,9 +87,7 @@ struct ContentView: View {
                     
                     
                 }//: ZStack
-                .padding(.bottom, 20)
-                , alignment: .bottom
-            )//: Overlay
+                .padding(.bottom, 20), alignment: .bottom)//: Overlay
         }//: Navigation
     }
     
@@ -104,7 +116,7 @@ struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
             ContentView()
-                .preferredColorScheme(.dark)
+                .preferredColorScheme(.light)
                 .environment(\.managedObjectContext, PersistenceController.shared.container.viewContext)
             
         }
