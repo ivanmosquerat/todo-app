@@ -12,6 +12,9 @@ struct SettingsView: View {
     @Environment(\.presentationMode) var presentationMode
     @EnvironmentObject var iconSettings: IconName
     
+    let themes: [Theme] = themeData
+    @ObservedObject var theme = ThemeSettings()
+    
     // MARK: - Body
     var body: some View {
         
@@ -41,7 +44,6 @@ struct SettingsView: View {
                                         .fontWeight(.bold)
                                         .foregroundColor(Color.primary)
                                 })//: Label
-                        
                         {
                             ForEach(0..<iconSettings.iconNames.count){ index in
                                 
@@ -81,6 +83,39 @@ struct SettingsView: View {
                         }
                     }//: Section 1
                     .padding(.vertical, 3)
+                    
+                    // MARK: - Section 2
+                    Section(
+                        header:
+                            
+                            HStack {
+                                Text("App Theme")
+                                
+                                Image(systemName:"circle.fill")
+                                    .resizable()
+                                    .frame(width: 10, height: 10)
+                                    .foregroundColor(themes[self.theme.themeSettings].themeColor)
+                            }){
+                        List{
+                            ForEach(themes, id: \.id){ item in
+                                
+                                Button(action:{
+                                    self.theme.themeSettings = item.id
+                                    UserDefaults.standard.set(self.theme.themeSettings, forKey: "Theme" )
+                                }){
+                                    HStack {
+                                        Image(systemName:"circle.fill")
+                                            .foregroundColor(item.themeColor)
+                                        
+                                        Text(item.themeName)
+                                    }
+                                }//: Button
+                                .accentColor(Color.primary)
+                            }
+                        }
+                    }//: Section 2
+                    .padding(.vertical, 3)
+                    
                     
                     // MARK: - Section 3
                     Section(header:Text("Social media")){

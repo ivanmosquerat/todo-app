@@ -15,6 +15,9 @@
 		2459160925E9285F00871715 /* todo_app.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2459160725E9285F00871715 /* todo_app.xcdatamodeld */; };
 		245B489B25EB62770094C1AB /* EmptyListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245B489A25EB62770094C1AB /* EmptyListView.swift */; };
 		245B489F25EB8F0A0094C1AB /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245B489E25EB8F0A0094C1AB /* SettingsView.swift */; };
+		247193E325EDCECF00748C0C /* ThemeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 247193E225EDCECF00748C0C /* ThemeModel.swift */; };
+		247193E625EDCF8700748C0C /* ThemeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 247193E525EDCF8700748C0C /* ThemeData.swift */; };
+		247193E925EDD0F300748C0C /* ThemeSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 247193E825EDD0F300748C0C /* ThemeSettings.swift */; };
 		2473E61225E9F58A005E90F7 /* AddTodoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2473E61125E9F58A005E90F7 /* AddTodoView.swift */; };
 		24A530F925ECC92B00EE3933 /* FormRowStaticView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A530F825ECC92B00EE3933 /* FormRowStaticView.swift */; };
 		24A530FC25ECD48D00EE3933 /* FormRowLinkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A530FB25ECD48D00EE3933 /* FormRowLinkView.swift */; };
@@ -41,6 +44,9 @@
 		2459160A25E9285F00871715 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		245B489A25EB62770094C1AB /* EmptyListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyListView.swift; sourceTree = "<group>"; };
 		245B489E25EB8F0A0094C1AB /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		247193E225EDCECF00748C0C /* ThemeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeModel.swift; sourceTree = "<group>"; };
+		247193E525EDCF8700748C0C /* ThemeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeData.swift; sourceTree = "<group>"; };
+		247193E825EDD0F300748C0C /* ThemeSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeSettings.swift; sourceTree = "<group>"; };
 		2473E61125E9F58A005E90F7 /* AddTodoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTodoView.swift; sourceTree = "<group>"; };
 		24A530F825ECC92B00EE3933 /* FormRowStaticView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormRowStaticView.swift; sourceTree = "<group>"; };
 		24A530FB25ECD48D00EE3933 /* FormRowLinkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormRowLinkView.swift; sourceTree = "<group>"; };
@@ -86,6 +92,7 @@
 		245915FB25E9285B00871715 /* todo app */ = {
 			isa = PBXGroup;
 			children = (
+				247193E025EDCE1200748C0C /* Theme */,
 				24A530FE25ECECF500EE3933 /* Icons */,
 				2473E60E25E9F571005E90F7 /* View */,
 				245915FC25E9285B00871715 /* todo_appApp.swift */,
@@ -104,6 +111,16 @@
 				2459160325E9285F00871715 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		247193E025EDCE1200748C0C /* Theme */ = {
+			isa = PBXGroup;
+			children = (
+				247193E225EDCECF00748C0C /* ThemeModel.swift */,
+				247193E525EDCF8700748C0C /* ThemeData.swift */,
+				247193E825EDD0F300748C0C /* ThemeSettings.swift */,
+			);
+			path = Theme;
 			sourceTree = "<group>";
 		};
 		2473E60E25E9F571005E90F7 /* View */ = {
@@ -215,8 +232,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				245B489F25EB8F0A0094C1AB /* SettingsView.swift in Sources */,
+				247193E925EDD0F300748C0C /* ThemeSettings.swift in Sources */,
 				24A530F925ECC92B00EE3933 /* FormRowStaticView.swift in Sources */,
 				24A530FC25ECD48D00EE3933 /* FormRowLinkView.swift in Sources */,
+				247193E625EDCF8700748C0C /* ThemeData.swift in Sources */,
+				247193E325EDCECF00748C0C /* ThemeModel.swift in Sources */,
 				2459160625E9285F00871715 /* Persistence.swift in Sources */,
 				245915FF25E9285B00871715 /* ContentView.swift in Sources */,
 				245B489B25EB62770094C1AB /* EmptyListView.swift in Sources */,
