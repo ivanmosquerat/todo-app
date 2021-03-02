@@ -31,24 +31,38 @@ struct ContentView: View {
                 List{
                     ForEach(self.tasks, id: \.self){ todo in
                         HStack{
+                            
+                            Circle()
+                                .frame(width: 12, height: 12, alignment: .center)
+                                .foregroundColor(colorize(priority: todo.priority ?? "Normal"))
+                            
                             Text(todo.name ?? "Unknown")
+                                .fontWeight(.semibold)
                             
                             Spacer()
                              
                             Text(todo.priority ?? "Undefined")
-                        }
+                                .font(.footnote)
+                                .foregroundColor(Color(UIColor.systemGray2))
+                                .padding(3)
+                                .frame(minWidth: 62)
+                                .overlay(
+                                    Capsule().stroke(Color(UIColor.systemGray2), lineWidth: 0.75)
+                                )
+                        }//: HStack
+                        .padding(.vertical, 10)
                     }//: Loop
                     .onDelete(perform: deleteTask)
                     
                 }//: List
                 .listStyle(InsetListStyle())
                 .navigationBarTitle("Task", displayMode: .inline)
-                .navigationBarItems( leading: EditButton().accentColor(self.themes[theme.themeSettings].themeColor),
+                .navigationBarItems( leading: EditButton().accentColor(themes[theme.themeSettings].themeColor),
                     trailing: Button(action:{
                         showingSettingsView.toggle()
                     }){
                         Image(systemName: "gear")
-                            .accentColor(self.themes[theme.themeSettings].themeColor)
+                            .accentColor(themes[theme.themeSettings].themeColor)
                             .imageScale(.large)
                     }//: Settings button
                     .sheet(isPresented: $showingSettingsView, content: {
@@ -86,7 +100,7 @@ struct ContentView: View {
                         
                     })//: Add button
                     .frame(minWidth: 100, maxWidth: 140)
-                    .background(self.themes[theme.themeSettings].themeColor)
+                    .background(themes[theme.themeSettings].themeColor)
                     .foregroundColor(.white)
                     .cornerRadius(8)
                     
@@ -97,6 +111,19 @@ struct ContentView: View {
     }
     
     // MARK: - Functions
+    
+    private func colorize(priority: String) -> Color{
+        switch priority {
+        case "High":
+            return .pink
+        case "Normal":
+            return .green
+        case "Low":
+            return .blue
+        default:
+            return .gray
+        }
+    }
     
     
     /// <#Description#>
