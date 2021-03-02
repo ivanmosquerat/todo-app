@@ -13,7 +13,7 @@ struct SettingsView: View {
     @EnvironmentObject var iconSettings: IconName
     
     let themes: [Theme] = themeData
-    @ObservedObject var theme = ThemeSettings()
+    @ObservedObject var theme = ThemeSettings.shared
     
     // MARK: - Body
     var body: some View {
@@ -163,6 +163,7 @@ struct SettingsView: View {
                 }
             )
         }//: Navigation
+        .navigationViewStyle(StackNavigationViewStyle())
     }
 }
 

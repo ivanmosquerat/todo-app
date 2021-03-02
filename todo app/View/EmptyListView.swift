@@ -13,7 +13,7 @@ struct EmptyListView: View {
     let images: [String] = ["illustration-no1", "illustration-no2", "illustration-no3"]
     let tips: [String] = ["Use your time wisely."]
     
-    @ObservedObject var theme = ThemeSettings()
+    @ObservedObject var theme = ThemeSettings.shared
     var themes: [Theme] = themeData
     
     // MARK: - Body
@@ -21,11 +21,12 @@ struct EmptyListView: View {
         ZStack {
             VStack(alignment: .center, spacing: 20) {
                 Image(images.randomElement() ?? self.images[0])
+                    .renderingMode(.template)
                     .resizable()
                     .scaledToFit()
                     .frame(minWidth: 256, idealWidth: 280, maxWidth: 360, minHeight: 256, idealHeight: 280, maxHeight: 360, alignment: .center)
                     .layoutPriority(1)
-                    .accentColor(self.themes[theme.themeSettings].themeColor)
+                    .foregroundColor(self.themes[theme.themeSettings].themeColor)
                 
                 Text(tips.randomElement() ?? self.tips[0])
                     .layoutPriority(0.5)

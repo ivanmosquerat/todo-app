@@ -18,7 +18,7 @@ struct AddTodoView: View {
     @State private var errorTitle: String = ""
     @State private var errorMessage: String = ""
     
-    @ObservedObject var theme = ThemeSettings()
+    @ObservedObject var theme = ThemeSettings.shared
     
     var themes: [Theme] = themeData
     let priorities = ["High", "Normal", "Low"]
@@ -97,6 +97,7 @@ struct AddTodoView: View {
                 Alert(title: Text(errorTitle), message: Text(errorMessage), dismissButton: .default(Text("Ok")))
             })
         }//: Navigation
+        .navigationViewStyle(StackNavigationViewStyle())
         
     }
 }
