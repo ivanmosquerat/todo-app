@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		24585F6D25EE250C002A22D9 /* RoutinesItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24585F6C25EE250C002A22D9 /* RoutinesItemView.swift */; };
+		24585F7725EE30A9002A22D9 /* ProgressBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24585F7625EE30A9002A22D9 /* ProgressBarView.swift */; };
 		245915FD25E9285B00871715 /* todo_appApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245915FC25E9285B00871715 /* todo_appApp.swift */; };
 		245915FF25E9285B00871715 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245915FE25E9285B00871715 /* ContentView.swift */; };
 		2459160125E9285F00871715 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2459160025E9285F00871715 /* Assets.xcassets */; };
@@ -34,6 +36,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		24585F6C25EE250C002A22D9 /* RoutinesItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutinesItemView.swift; sourceTree = "<group>"; };
+		24585F7625EE30A9002A22D9 /* ProgressBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBarView.swift; sourceTree = "<group>"; };
 		245915F925E9285B00871715 /* todo app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "todo app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		245915FC25E9285B00871715 /* todo_appApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = todo_appApp.swift; sourceTree = "<group>"; };
 		245915FE25E9285B00871715 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -73,6 +77,63 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		24585F6425EE20FE002A22D9 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		24585F6625EE2131002A22D9 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				245B489E25EB8F0A0094C1AB /* SettingsView.swift */,
+				24A530F825ECC92B00EE3933 /* FormRowStaticView.swift */,
+				24A530FB25ECD48D00EE3933 /* FormRowLinkView.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		24585F6725EE213E002A22D9 /* Tasks */ = {
+			isa = PBXGroup;
+			children = (
+				2473E61125E9F58A005E90F7 /* AddTodoView.swift */,
+				24A5310025ECEFA600EE3933 /* EditTaskView.swift */,
+			);
+			path = Tasks;
+			sourceTree = "<group>";
+		};
+		24585F6925EE2148002A22D9 /* Empty View */ = {
+			isa = PBXGroup;
+			children = (
+				245B489A25EB62770094C1AB /* EmptyListView.swift */,
+			);
+			path = "Empty View";
+			sourceTree = "<group>";
+		};
+		24585F6A25EE2174002A22D9 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				24585F7625EE30A9002A22D9 /* ProgressBarView.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		24585F6B25EE217D002A22D9 /* Routines */ = {
+			isa = PBXGroup;
+			children = (
+				24585F6C25EE250C002A22D9 /* RoutinesItemView.swift */,
+			);
+			path = Routines;
+			sourceTree = "<group>";
+		};
+		24585F6F25EE2681002A22D9 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
 		245915F025E9285B00871715 = {
 			isa = PBXGroup;
 			children = (
@@ -92,15 +153,17 @@
 		245915FB25E9285B00871715 /* todo app */ = {
 			isa = PBXGroup;
 			children = (
-				247193E025EDCE1200748C0C /* Theme */,
-				24A530FE25ECECF500EE3933 /* Icons */,
-				2473E60E25E9F571005E90F7 /* View */,
+				24585F6F25EE2681002A22D9 /* Utilities */,
+				2459160A25E9285F00871715 /* Info.plist */,
+				2459160525E9285F00871715 /* Persistence.swift */,
 				245915FC25E9285B00871715 /* todo_appApp.swift */,
 				2459160025E9285F00871715 /* Assets.xcassets */,
-				2459160525E9285F00871715 /* Persistence.swift */,
-				2459160A25E9285F00871715 /* Info.plist */,
-				2459160725E9285F00871715 /* todo_app.xcdatamodeld */,
+				24A530FE25ECECF500EE3933 /* Icons */,
+				24585F6425EE20FE002A22D9 /* Models */,
 				2459160225E9285F00871715 /* Preview Content */,
+				247193E025EDCE1200748C0C /* Theme */,
+				2459160725E9285F00871715 /* todo_app.xcdatamodeld */,
+				2473E60E25E9F571005E90F7 /* Views */,
 			);
 			path = "todo app";
 			sourceTree = "<group>";
@@ -123,18 +186,17 @@
 			path = Theme;
 			sourceTree = "<group>";
 		};
-		2473E60E25E9F571005E90F7 /* View */ = {
+		2473E60E25E9F571005E90F7 /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				245915FE25E9285B00871715 /* ContentView.swift */,
-				2473E61125E9F58A005E90F7 /* AddTodoView.swift */,
-				245B489A25EB62770094C1AB /* EmptyListView.swift */,
-				245B489E25EB8F0A0094C1AB /* SettingsView.swift */,
-				24A530F825ECC92B00EE3933 /* FormRowStaticView.swift */,
-				24A530FB25ECD48D00EE3933 /* FormRowLinkView.swift */,
-				24A5310025ECEFA600EE3933 /* EditTaskView.swift */,
+				24585F6B25EE217D002A22D9 /* Routines */,
+				24585F6A25EE2174002A22D9 /* Helpers */,
+				24585F6725EE213E002A22D9 /* Tasks */,
+				24585F6925EE2148002A22D9 /* Empty View */,
+				24585F6625EE2131002A22D9 /* Settings */,
 			);
-			path = View;
+			path = Views;
 			sourceTree = "<group>";
 		};
 		24A530FE25ECECF500EE3933 /* Icons */ = {
@@ -235,6 +297,8 @@
 				247193E925EDD0F300748C0C /* ThemeSettings.swift in Sources */,
 				24A530F925ECC92B00EE3933 /* FormRowStaticView.swift in Sources */,
 				24A530FC25ECD48D00EE3933 /* FormRowLinkView.swift in Sources */,
+				24585F7725EE30A9002A22D9 /* ProgressBarView.swift in Sources */,
+				24585F6D25EE250C002A22D9 /* RoutinesItemView.swift in Sources */,
 				247193E625EDCF8700748C0C /* ThemeData.swift in Sources */,
 				247193E325EDCECF00748C0C /* ThemeModel.swift in Sources */,
 				2459160625E9285F00871715 /* Persistence.swift in Sources */,
