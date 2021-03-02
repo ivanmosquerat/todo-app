@@ -95,6 +95,7 @@ struct SettingsView: View {
                                     .resizable()
                                     .frame(width: 10, height: 10)
                                     .foregroundColor(themes[self.theme.themeSettings].themeColor)
+                                    
                             }){
                         List{
                             ForEach(themes, id: \.id){ item in
@@ -157,6 +158,7 @@ struct SettingsView: View {
                     presentationMode.wrappedValue.dismiss()
                 }){
                     Image(systemName: "xmark.circle")
+                        .accentColor(themes[self.theme.themeSettings].themeColor)
                         .imageScale(.large)
                 }
             )

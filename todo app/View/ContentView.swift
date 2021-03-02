@@ -18,6 +18,10 @@ struct ContentView: View {
     @State private var animatingButton: Bool = false
     @State private var showingSettingsView: Bool = false
     
+    @ObservedObject var theme = ThemeSettings()
+    
+    var themes: [Theme] = themeData
+    
     // MARK: - Body
     var body: some View {
         
@@ -39,11 +43,12 @@ struct ContentView: View {
                 }//: List
                 .listStyle(InsetListStyle())
                 .navigationBarTitle("Task", displayMode: .inline)
-                .navigationBarItems( leading: EditButton(),
+                .navigationBarItems( leading: EditButton().accentColor(self.themes[theme.themeSettings].themeColor),
                     trailing: Button(action:{
                         showingSettingsView.toggle()
                     }){
                         Image(systemName: "gear")
+                            .accentColor(self.themes[theme.themeSettings].themeColor)
                             .imageScale(.large)
                     }//: Settings button
                     .sheet(isPresented: $showingSettingsView, content: {
@@ -81,7 +86,7 @@ struct ContentView: View {
                         
                     })//: Add button
                     .frame(minWidth: 100, maxWidth: 140)
-                    .background(Color.blue)
+                    .background(self.themes[theme.themeSettings].themeColor)
                     .foregroundColor(.white)
                     .cornerRadius(8)
                     
