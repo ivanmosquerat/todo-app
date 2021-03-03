@@ -33,7 +33,9 @@
 		24A5311225ECF01700EE3933 /* Pink.png in Resources */ = {isa = PBXBuildFile; fileRef = 24A5310925ECF01700EE3933 /* Pink.png */; };
 		24A5311325ECF01700EE3933 /* Blue Dark.png in Resources */ = {isa = PBXBuildFile; fileRef = 24A5310A25ECF01700EE3933 /* Blue Dark.png */; };
 		24A5311425ECF01700EE3933 /* Blue.png in Resources */ = {isa = PBXBuildFile; fileRef = 24A5310B25ECF01700EE3933 /* Blue.png */; };
+		24AF4FA425EFC75D00646B60 /* DayButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AF4FA325EFC75D00646B60 /* DayButtonView.swift */; };
 		24D0DEB925EF916D00691E37 /* RoutinesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24D0DEB825EF916D00691E37 /* RoutinesListView.swift */; };
+		24D0DEBD25EFA46100691E37 /* CreateRoutineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24D0DEBC25EFA46100691E37 /* CreateRoutineView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -65,7 +67,9 @@
 		24A5310925ECF01700EE3933 /* Pink.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Pink.png; sourceTree = "<group>"; };
 		24A5310A25ECF01700EE3933 /* Blue Dark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Blue Dark.png"; sourceTree = "<group>"; };
 		24A5310B25ECF01700EE3933 /* Blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Blue.png; sourceTree = "<group>"; };
+		24AF4FA325EFC75D00646B60 /* DayButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayButtonView.swift; sourceTree = "<group>"; };
 		24D0DEB825EF916D00691E37 /* RoutinesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutinesListView.swift; sourceTree = "<group>"; };
+		24D0DEBC25EFA46100691E37 /* CreateRoutineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateRoutineView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +121,7 @@
 			isa = PBXGroup;
 			children = (
 				24585F7625EE30A9002A22D9 /* ProgressBarView.swift */,
+				24AF4FA325EFC75D00646B60 /* DayButtonView.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -126,6 +131,7 @@
 			children = (
 				24585F6C25EE250C002A22D9 /* RoutinesItemView.swift */,
 				24D0DEB825EF916D00691E37 /* RoutinesListView.swift */,
+				24D0DEBC25EFA46100691E37 /* CreateRoutineView.swift */,
 			);
 			path = Routines;
 			sourceTree = "<group>";
@@ -296,10 +302,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				24D0DEBD25EFA46100691E37 /* CreateRoutineView.swift in Sources */,
 				245B489F25EB8F0A0094C1AB /* SettingsView.swift in Sources */,
 				24D0DEB925EF916D00691E37 /* RoutinesListView.swift in Sources */,
 				247193E925EDD0F300748C0C /* ThemeSettings.swift in Sources */,
 				24A530F925ECC92B00EE3933 /* FormRowStaticView.swift in Sources */,
+				24AF4FA425EFC75D00646B60 /* DayButtonView.swift in Sources */,
 				24A530FC25ECD48D00EE3933 /* FormRowLinkView.swift in Sources */,
 				24585F7725EE30A9002A22D9 /* ProgressBarView.swift in Sources */,
 				24585F6D25EE250C002A22D9 /* RoutinesItemView.swift in Sources */,

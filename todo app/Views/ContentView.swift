@@ -13,7 +13,7 @@ struct ContentView: View {
     // MARK: - Properties
     @EnvironmentObject var iconSettings: IconName
     @Environment(\.managedObjectContext) private var viewContext
-    @FetchRequest(entity: Todo.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \Todo.name, ascending: true)]) var tasks: FetchedResults<Todo>
+    @FetchRequest(entity: Task.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \Task.name, ascending: true)]) var tasks: FetchedResults<Task>
     @State private var showingAddTodoView: Bool = false
     @State private var animatingButton: Bool = false
     @State private var showingSettingsView: Bool = false

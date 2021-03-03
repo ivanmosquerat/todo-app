@@ -8,18 +8,54 @@
 import SwiftUI
 
 struct RoutinesListView: View {
+    
+    // MARK: - Properties
+    @ObservedObject var theme = ThemeSettings.shared
+    @State var isShowingCreateRoutine: Bool = false
+    var themes: [Theme] = themeData
+    
+    // MARK: - Body
     var body: some View {
         
         NavigationView{
             
-            ZStack {
-                List(0..<5) { item in
+            VStack {
+                List(0..<2) { item in
                     
                     RoutinesItemView()
-                    
-                }
+                }//: List
                 .listStyle(InsetListStyle())
-            }
+            }//: VStack
+            .navigationBarTitle("Routines")
+            
+            .overlay(
+            
+                ZStack{
+                    Button(action: {
+                        isShowingCreateRoutine.toggle()
+                    }, label: {
+                        
+                        HStack(alignment: .center, spacing: 5){
+                            Text("Create routine")
+                                .font(.system(size: 20, weight: .bold))
+                                .padding(.vertical, 12)
+                                
+                            Image(systemName: "plus.circle")
+                                .font(.title3)
+                                
+                        }
+                        
+                    })//: Add button
+                }//: ZStack
+                .frame(minWidth: 140, maxWidth: 180)
+                .background(themes[theme.themeSettings].themeColor)
+                .foregroundColor(.white)
+                .cornerRadius(8)
+                .sheet(isPresented: $isShowingCreateRoutine, content: {
+                    CreateRoutineView()
+                })
+                , alignment: .bottom)
+        
             
         }//: Navigation
     }

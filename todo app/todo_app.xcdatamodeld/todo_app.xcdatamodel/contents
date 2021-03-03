@@ -4,11 +4,12 @@
         <attribute name="timestamp" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
     </entity>
     <entity name="Routine" representedClassName="Routine" syncable="YES" codeGenerationType="class">
+        <attribute name="color" optional="YES" attributeType="String"/>
         <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="name" optional="YES" attributeType="String" minValueString="1"/>
-        <relationship name="task" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Todo" inverseName="routine" inverseEntity="Todo"/>
+        <relationship name="task" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Task" inverseName="routine" inverseEntity="Task"/>
     </entity>
-    <entity name="Todo" representedClassName="Todo" syncable="YES" codeGenerationType="class">
+    <entity name="Task" representedClassName="Task" syncable="YES" codeGenerationType="class">
         <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="name" optional="YES" attributeType="String"/>
@@ -17,7 +18,7 @@
     </entity>
     <elements>
         <element name="Item" positionX="-155.3377685546875" positionY="-192.0439300537109" width="128" height="44"/>
-        <element name="Routine" positionX="77.25311279296875" positionY="-126.9959716796875" width="128" height="88"/>
-        <element name="Todo" positionX="-158.3267211914062" positionY="-126.2357482910156" width="128" height="118"/>
+        <element name="Routine" positionX="77.25311279296875" positionY="-126.9959716796875" width="128" height="89"/>
+        <element name="Task" positionX="-158.3267211914062" positionY="-126.2357482910156" width="128" height="104"/>
     </elements>
 </model>
