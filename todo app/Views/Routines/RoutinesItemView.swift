@@ -15,7 +15,7 @@ struct RoutinesItemView: View {
         
         VStack(alignment: .leading){
             HStack {
-                Text("Routine name")
+                Text("List name")
                     .font(.title3)
                     .fontWeight(.semibold)
                 
@@ -23,7 +23,9 @@ struct RoutinesItemView: View {
             }//: HStack
             
             ProgressBarView()
+            
         }//: VStack
+        .padding(.vertical, 10)
         
     }
 }
