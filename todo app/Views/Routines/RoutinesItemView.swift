@@ -12,6 +12,7 @@ struct RoutinesItemView: View {
     @ObservedObject var theme = ThemeSettings.shared
     var routine: Routine
     var themes: [Theme] = themeData
+    var days = Days.allCases
     
     // MARK: - Body
     var body: some View {
@@ -29,22 +30,22 @@ struct RoutinesItemView: View {
             .padding(.vertical, 2)
             
             HStack{
-                ForEach(0..<7) { item in
+                ForEach(days, id:\.self) { item in
                     
                     ZStack {
                         RoundedRectangle(cornerRadius: 12)
-                            .fill(Color(UIColor.systemGray5))
+                            .fill( routine.days?.contains(item.code) ?? false ? Color(routine.color ?? "Orange") : Color(UIColor.systemGray5))
                             .frame(width: 35, height: 35, alignment: .center)
                         
-                        Text("S")
-                            .foregroundColor(themes[theme.themeSettings].themeColor)
+                        Text(item.code)
+                            .foregroundColor(routine.days?.contains(item.code) ?? false ? .white : Color(routine.color ?? "Orange"))
                             .fontWeight(.semibold)
                     }
                 }
             }//: HStack
             .padding(.vertical, 8)
             
-            ProgressBarView(colorBackground: routine.color ?? "Blue")
+            ProgressBarView(colorBackground: routine.color ?? "Orange")
             
         }//: VStack
         .padding(.vertical, 10)

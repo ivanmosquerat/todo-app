@@ -9,7 +9,7 @@ import SwiftUI
 
 final public class DaysRoutine: ObservableObject {
     
-    @Published var days: [String] = []
+    @Published var days: [Days] = []
     
     private init() {}
     public static let shared = DaysRoutine()

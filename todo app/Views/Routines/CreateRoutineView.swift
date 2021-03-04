@@ -20,8 +20,9 @@ struct CreateRoutineView: View {
     
     @ObservedObject var theme = ThemeSettings.shared
     @ObservedObject var colorSelected = ColorRoutineSettings.shared
+    @ObservedObject var daysRoutine = DaysRoutine.shared
     
-    private let days = ["S", "M", "T", "W", "T", "F", "S"]
+    private let days = Days.allCases
     
     var themes: [Theme] = themeData
     
@@ -45,9 +46,9 @@ struct CreateRoutineView: View {
                         .fontWeight(.semibold)
                     // Days
                     HStack(spacing: 6){
-                        ForEach(0..<7){ item in
+                        ForEach(days, id: \.self){ day in
                             
-                            DayButtonView(dayString: days[item])
+                            DayButtonView(day: day)
                             
                         }
                     }//: HStack
@@ -61,7 +62,6 @@ struct CreateRoutineView: View {
                     ScrollView(.horizontal, showsIndicators: false) {
                         
                         LazyHGrid(rows: gridLayout, alignment: .center , spacing: 5, content: {
-                            
                             
                             ForEach(Colors.allCases, id:\.self){ color in
                                 
@@ -88,14 +88,14 @@ struct CreateRoutineView: View {
                     }//: Scroll
                     .frame(width: .infinity, height: 120, alignment: .center)
                     
-                    
                     Button(action: {
                         
                         if name != ""{
+                            
                             let routine = Routine(context: viewContext)
                             routine.name = name
                             routine.color = colorSelected.colorBackground
-                            routine.days = daysSelected
+                            routine.days = daysRoutine.days.map{ $0.code }
                             
                             do{
                                 try viewContext.save()
@@ -138,6 +138,9 @@ struct CreateRoutineView: View {
             )
         }//: Navigation
         .navigationViewStyle(StackNavigationViewStyle())
+        .onAppear(perform: {
+            daysRoutine.days = []
+        })
     }
 }
 

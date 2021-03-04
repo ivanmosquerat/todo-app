@@ -11,17 +11,31 @@ struct DayButtonView: View {
     // MARK: - Properties
     @State private var isDaySelected: Bool = false
     @ObservedObject var theme = ThemeSettings.shared
-    var dayString: String
+    @ObservedObject var daysRoutine = DaysRoutine.shared
+    
+    var day: Days
     var themes: [Theme] = themeData
     
     // MARK: - Body
     var body: some View {
         
         Button(action:{
+            
+            
+            if !daysRoutine.days.contains(day) && !isDaySelected{
+                
+                daysRoutine.days.append(day)
+                
+            }else{
+                //daysRoutine.days.remo
+            }
+            
             isDaySelected.toggle()
+            
+            
         }){
 
-            Text(dayString)
+            Text(day.code)
                 .fontWeight(.bold)
                 .foregroundColor(isDaySelected ? .white : themes[theme.themeSettings].themeColor)
                 .frame(width: 45, height: 45, alignment: .center)
@@ -34,7 +48,7 @@ struct DayButtonView: View {
 
 struct DayButtonView_Previews: PreviewProvider {
     static var previews: some View {
-        DayButtonView(dayString: "S")
+        DayButtonView(day: Days.allCases[0])
             .previewLayout(.sizeThatFits)
             .padding()
     }

@@ -37,34 +37,41 @@ struct RoutinesListView: View {
                 
             }//: VStack
             .navigationBarTitle("Routines", displayMode: .inline)
+            .navigationBarItems(trailing:
+                Button(action: {
+                    isShowingCreateRoutine.toggle()
+                }, label: {
+                    Image(systemName: "plus")
+                })
+            )
             
-            .overlay(
-            
-                ZStack{
-                    Button(action: {
-                        isShowingCreateRoutine.toggle()
-                    }, label: {
-                        
-                        HStack(alignment: .center, spacing: 5){
-                            Text("Create routine")
-                                .font(.system(size: 20, weight: .bold))
-                                .padding(.vertical, 12)
-                                
-                            Image(systemName: "plus.circle")
-                                .font(.title3)
-                                
-                        }
-                        
-                    })//: Add button
-                }//: ZStack
-                .frame(minWidth: 140, maxWidth: 180)
-                .background(themes[theme.themeSettings].themeColor)
-                .foregroundColor(.white)
-                .cornerRadius(8)
+//            .overlay(
+//
+//                ZStack{
+//                    Button(action: {
+//                        isShowingCreateRoutine.toggle()
+//                    }, label: {
+//
+//                        HStack(alignment: .center, spacing: 5){
+//                            Text("Create routine")
+//                                .font(.system(size: 20, weight: .bold))
+//                                .padding(.vertical, 12)
+//
+//                            Image(systemName: "plus.circle")
+//                                .font(.title3)
+//
+//                        }
+//
+//                    })//: Add button
+//                }//: ZStack
+//                .frame(minWidth: 140, maxWidth: 180)
+//                .background(themes[theme.themeSettings].themeColor)
+//                .foregroundColor(.white)
+//                .cornerRadius(8)
                 .sheet(isPresented: $isShowingCreateRoutine, content: {
                     CreateRoutineView()
                 })
-                , alignment: .bottom)
+//                , alignment: .bottom)
         }//: Navigation
     }
     
