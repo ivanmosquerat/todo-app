@@ -16,7 +16,7 @@ struct CreateRoutineView: View {
     @State private var isDaySelected: Bool = false
     @State private var name: String = ""
     @State private var daysSelected: [String] = ["S"]
-    @State private var isColorSelected: Bool = false
+    @State var selectedButton: String = "Orange"
     
     @ObservedObject var theme = ThemeSettings.shared
     @ObservedObject var colorSelected = ColorRoutineSettings.shared
@@ -68,14 +68,16 @@ struct CreateRoutineView: View {
                                 ZStack {
                                     
                                     RoundedRectangle(cornerRadius: 12)
-                                        .stroke( isColorSelected ? Color.blue : Color.clear, lineWidth: 5)
+                                        .stroke( selectedButton == color.backgroundColor ? Color.blue : Color.clear, lineWidth: 6)
                                         .frame(width: 45, height: 45, alignment: .center)
                                     
                                     RoundedRectangle(cornerRadius: 12)
                                         .fill(Color(color.backgroundColor))
                                         .frame(width: 45, height: 45, alignment: .center)
                                         .onTapGesture(perform: {
-                                            isColorSelected.toggle()
+                                            
+                                            selectedButton = color.backgroundColor
+                                            
                                             colorSelected.colorBackground = color.backgroundColor
                                     })
                                 }.padding(.horizontal, 5)

@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		2422DC7D25F0BD3900C58CC5 /* ColorRoutinesData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2422DC7C25F0BD3900C58CC5 /* ColorRoutinesData.swift */; };
 		2422DC8025F0CAFA00C58CC5 /* ColorRoutineSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2422DC7F25F0CAFA00C58CC5 /* ColorRoutineSettings.swift */; };
+		2422DC8A25F1080E00C58CC5 /* DaysRoutineData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2422DC8925F1080E00C58CC5 /* DaysRoutineData.swift */; };
+		2422DC8E25F10AB700C58CC5 /* DaysRoutine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2422DC8D25F10AB700C58CC5 /* DaysRoutine.swift */; };
 		24585F6D25EE250C002A22D9 /* RoutinesItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24585F6C25EE250C002A22D9 /* RoutinesItemView.swift */; };
 		24585F7725EE30A9002A22D9 /* ProgressBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24585F7625EE30A9002A22D9 /* ProgressBarView.swift */; };
 		245915FD25E9285B00871715 /* todo_appApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245915FC25E9285B00871715 /* todo_appApp.swift */; };
@@ -45,6 +47,8 @@
 /* Begin PBXFileReference section */
 		2422DC7C25F0BD3900C58CC5 /* ColorRoutinesData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorRoutinesData.swift; sourceTree = "<group>"; };
 		2422DC7F25F0CAFA00C58CC5 /* ColorRoutineSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorRoutineSettings.swift; sourceTree = "<group>"; };
+		2422DC8925F1080E00C58CC5 /* DaysRoutineData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaysRoutineData.swift; sourceTree = "<group>"; };
+		2422DC8D25F10AB700C58CC5 /* DaysRoutine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaysRoutine.swift; sourceTree = "<group>"; };
 		24585F6C25EE250C002A22D9 /* RoutinesItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutinesItemView.swift; sourceTree = "<group>"; };
 		24585F7625EE30A9002A22D9 /* ProgressBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBarView.swift; sourceTree = "<group>"; };
 		245915F925E9285B00871715 /* todo app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "todo app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -100,9 +104,19 @@
 			path = ColorsRoutine;
 			sourceTree = "<group>";
 		};
+		2422DC8825F107E400C58CC5 /* DaysRoutine */ = {
+			isa = PBXGroup;
+			children = (
+				2422DC8925F1080E00C58CC5 /* DaysRoutineData.swift */,
+				2422DC8D25F10AB700C58CC5 /* DaysRoutine.swift */,
+			);
+			path = DaysRoutine;
+			sourceTree = "<group>";
+		};
 		24585F6425EE20FE002A22D9 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				2422DC8825F107E400C58CC5 /* DaysRoutine */,
 				2422DC7625F08A5A00C58CC5 /* ColorsRoutine */,
 				247193E025EDCE1200748C0C /* Theme */,
 			);
@@ -326,6 +340,7 @@
 				245B489F25EB8F0A0094C1AB /* SettingsView.swift in Sources */,
 				24D0DEB925EF916D00691E37 /* RoutinesListView.swift in Sources */,
 				247193E925EDD0F300748C0C /* ThemeSettings.swift in Sources */,
+				2422DC8A25F1080E00C58CC5 /* DaysRoutineData.swift in Sources */,
 				24A530F925ECC92B00EE3933 /* FormRowStaticView.swift in Sources */,
 				24AF4FA425EFC75D00646B60 /* DayButtonView.swift in Sources */,
 				24A530FC25ECD48D00EE3933 /* FormRowLinkView.swift in Sources */,
@@ -340,6 +355,7 @@
 				2422DC8025F0CAFA00C58CC5 /* ColorRoutineSettings.swift in Sources */,
 				2422DC7D25F0BD3900C58CC5 /* ColorRoutinesData.swift in Sources */,
 				2473D3EB25F07D0E009CCED5 /* Constants.swift in Sources */,
+				2422DC8E25F10AB700C58CC5 /* DaysRoutine.swift in Sources */,
 				2459160925E9285F00871715 /* todo_app.xcdatamodeld in Sources */,
 				2473E61225E9F58A005E90F7 /* AddTodoView.swift in Sources */,
 				24AF4FA725EFCCB600646B60 /* RoutineDetailView.swift in Sources */,

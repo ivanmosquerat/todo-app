@@ -70,9 +70,6 @@ enum Colors: CaseIterable{
     }
 }
     
-//    ColorRoutine(id: 0, name: "magenta"),
-//
-//    ColorRoutine(id: 1, name: "orange")
-//
+
     
 
