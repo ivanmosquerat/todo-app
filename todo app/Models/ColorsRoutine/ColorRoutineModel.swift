@@ -9,6 +9,6 @@ import SwiftUI
 
 struct ColorRoutine: Identifiable {
     let id: Int
-    let colorHexCode: String
-    var color: UIColor 
+    let backgroundName: String
+    
 }

@@ -10,8 +10,14 @@ import SwiftUI
 struct RoutinesListView: View {
     
     // MARK: - Properties
+    //@EnvironmentObject var routines: Routine
     @ObservedObject var theme = ThemeSettings.shared
     @State var isShowingCreateRoutine: Bool = false
+    
+    //@FetchRequest(entity: Task.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \Task.name, ascending: true)]) var tasks: FetchedResults<Task>
+    @Environment(\.managedObjectContext) private var viewContext
+    @FetchRequest(entity: Routine.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \Routine.name, ascending: true)]) var routines: FetchedResults<Routine>
+    
     var themes: [Theme] = themeData
     
     // MARK: - Body
@@ -22,9 +28,9 @@ struct RoutinesListView: View {
             VStack {
                 List{
                     
-                    ForEach(0..<2){ item in
+                    ForEach(self.routines, id: \.self){ routine in
                         
-                        RoutinesItemView()
+                        RoutinesItemView(routine: routine)
                     }
                     .onDelete(perform: { indexSet in
                         //DELETE
@@ -72,5 +78,7 @@ struct RoutinesListView: View {
 struct RoutinesListView_Previews: PreviewProvider {
     static var previews: some View {
         RoutinesListView()
+            .environment(\.managedObjectContext, PersistenceController.shared.container.viewContext)
+            //.environmentObject(Routine())
     }
 }

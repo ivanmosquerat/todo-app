@@ -12,6 +12,7 @@ struct ProgressBarView: View {
     // MARK: - Properties
     @State var isBarAnimating = false
     let widthBar = UIScreen.main.bounds.width - 36
+    var colorBackground: String
     
     // MARK: - Body
     var body: some View {
@@ -20,7 +21,7 @@ struct ProgressBarView: View {
             
             Capsule(style: .continuous)
                 .frame(width: isBarAnimating ? (widthBar * 0.8) : 0 , height: 23, alignment: .topLeading)
-                .foregroundColor(.blue)
+                .foregroundColor(Color(colorBackground))
                 .padding(.leading, 1)
                 .onAppear(perform: {
                     withAnimation(.easeIn(duration: 1)){
@@ -29,7 +30,7 @@ struct ProgressBarView: View {
                 })
             
             Capsule(style: .continuous)
-                .stroke(Color(UIColor.blue), lineWidth: 2)
+                .stroke(Color("Border\(colorBackground)"), lineWidth: 2)
                 .frame(width: widthBar, height: 25)
                 .overlay(
                     Text("\(Int(((widthBar * 0.8)/widthBar)*100))%")
@@ -50,7 +51,7 @@ struct ProgressBarView: View {
 // MARK: - Preview
 struct ProgressBarView_Previews: PreviewProvider {
     static var previews: some View {
-        ProgressBarView()
+        ProgressBarView(colorBackground: "Teal")
             .previewLayout(.sizeThatFits)
             
     }

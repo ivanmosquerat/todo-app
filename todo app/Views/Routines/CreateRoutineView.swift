@@ -14,12 +14,12 @@ struct CreateRoutineView: View {
     
     @State private var gridLayout: [GridItem] = [GridItem(.flexible()), GridItem(.flexible())]
     @State private var isDaySelected: Bool = false
-    
     @State private var name: String = ""
-    @State private var daysSelected: [String] = []
-    @State private var colorSelected: String = ""
+    @State private var daysSelected: [String] = ["S"]
+    //@State private var colorSelected: String = "blue"
     
     @ObservedObject var theme = ThemeSettings.shared
+    @ObservedObject var colorSelected = ColorRoutineSettings.shared
     
     private let days = ["S", "M", "T", "W", "T", "F", "S"]
     
@@ -66,8 +66,11 @@ struct CreateRoutineView: View {
                             ForEach(Colors.allCases, id:\.self){ color in
                                 
                                 RoundedRectangle(cornerRadius: 12)
-                                    .fill(Color(color.color))
+                                    .fill(Color(color.backgroundColor))
                                     .frame(width: 45, height: 45, alignment: .center)
+                                    .onTapGesture(perform: {
+                                        colorSelected.colorBackground = color.backgroundColor
+                                    })
                             }
                             
                         })//: Grid
@@ -80,7 +83,7 @@ struct CreateRoutineView: View {
                         if name != ""{
                             let routine = Routine(context: viewContext)
                             routine.name = name
-                            routine.color = colorSelected
+                            routine.color = colorSelected.colorBackground
                             routine.days = daysSelected
                             
                             do{

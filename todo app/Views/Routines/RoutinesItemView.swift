@@ -10,6 +10,7 @@ import SwiftUI
 struct RoutinesItemView: View {
     // MARK: - Properties
     @ObservedObject var theme = ThemeSettings.shared
+    var routine: Routine
     var themes: [Theme] = themeData
     
     // MARK: - Body
@@ -17,7 +18,7 @@ struct RoutinesItemView: View {
         
         VStack(alignment: .leading){
             HStack {
-                Text("List name")
+                Text(routine.name ?? "Unknown")
                     .font(.title)
                     .fontWeight(.semibold)
                 
@@ -43,9 +44,7 @@ struct RoutinesItemView: View {
             }//: HStack
             .padding(.vertical, 8)
             
-            
-            
-            ProgressBarView()
+            ProgressBarView(colorBackground: routine.color ?? "Blue")
             
         }//: VStack
         .padding(.vertical, 10)
@@ -56,7 +55,7 @@ struct RoutinesItemView: View {
 // MARK: - Preview
 struct RoutinesItemView_Previews: PreviewProvider {
     static var previews: some View {
-        RoutinesItemView()
+        RoutinesItemView(routine: Routine())
             .previewLayout(.sizeThatFits)
             .padding()
     }

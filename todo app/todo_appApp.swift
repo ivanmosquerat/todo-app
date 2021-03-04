@@ -14,9 +14,10 @@ struct todo_appApp: App {
     
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            RoutinesListView()
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
-                .environmentObject(IconName())
+                //.environmentObject(IconName())
+                //.environmentObject(Routine())
         }
     }
 }
