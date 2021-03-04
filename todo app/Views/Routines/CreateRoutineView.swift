@@ -16,7 +16,7 @@ struct CreateRoutineView: View {
     @State private var isDaySelected: Bool = false
     @State private var name: String = ""
     @State private var daysSelected: [String] = ["S"]
-    //@State private var colorSelected: String = "blue"
+    @State private var isColorSelected: Bool = false
     
     @ObservedObject var theme = ThemeSettings.shared
     @ObservedObject var colorSelected = ColorRoutineSettings.shared
@@ -60,22 +60,31 @@ struct CreateRoutineView: View {
                     
                     ScrollView(.horizontal, showsIndicators: false) {
                         
-                        LazyHGrid(rows: gridLayout, alignment: .center , spacing: 12, content: {
+                        LazyHGrid(rows: gridLayout, alignment: .center , spacing: 5, content: {
                             
                             
                             ForEach(Colors.allCases, id:\.self){ color in
                                 
-                                RoundedRectangle(cornerRadius: 12)
-                                    .fill(Color(color.backgroundColor))
-                                    .frame(width: 45, height: 45, alignment: .center)
-                                    .onTapGesture(perform: {
-                                        colorSelected.colorBackground = color.backgroundColor
+                                ZStack {
+                                    
+                                    RoundedRectangle(cornerRadius: 12)
+                                        .stroke( isColorSelected ? Color.blue : Color.clear, lineWidth: 5)
+                                        .frame(width: 45, height: 45, alignment: .center)
+                                    
+                                    RoundedRectangle(cornerRadius: 12)
+                                        .fill(Color(color.backgroundColor))
+                                        .frame(width: 45, height: 45, alignment: .center)
+                                        .onTapGesture(perform: {
+                                            isColorSelected.toggle()
+                                            colorSelected.colorBackground = color.backgroundColor
                                     })
+                                }.padding(.horizontal, 5)
                             }
                             
                         })//: Grid
+                        
                     }//: Scroll
-                    .frame(width: .infinity, height: 100, alignment: .center)
+                    .frame(width: .infinity, height: 120, alignment: .center)
                     
                     
                     Button(action: {

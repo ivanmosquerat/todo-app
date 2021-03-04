@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2422DC7825F08B9D00C58CC5 /* ColorRoutineModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2422DC7725F08B9D00C58CC5 /* ColorRoutineModel.swift */; };
 		2422DC7D25F0BD3900C58CC5 /* ColorRoutinesData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2422DC7C25F0BD3900C58CC5 /* ColorRoutinesData.swift */; };
 		2422DC8025F0CAFA00C58CC5 /* ColorRoutineSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2422DC7F25F0CAFA00C58CC5 /* ColorRoutineSettings.swift */; };
 		24585F6D25EE250C002A22D9 /* RoutinesItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24585F6C25EE250C002A22D9 /* RoutinesItemView.swift */; };
@@ -44,7 +43,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		2422DC7725F08B9D00C58CC5 /* ColorRoutineModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorRoutineModel.swift; sourceTree = "<group>"; };
 		2422DC7C25F0BD3900C58CC5 /* ColorRoutinesData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorRoutinesData.swift; sourceTree = "<group>"; };
 		2422DC7F25F0CAFA00C58CC5 /* ColorRoutineSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorRoutineSettings.swift; sourceTree = "<group>"; };
 		24585F6C25EE250C002A22D9 /* RoutinesItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutinesItemView.swift; sourceTree = "<group>"; };
@@ -96,7 +94,6 @@
 		2422DC7625F08A5A00C58CC5 /* ColorsRoutine */ = {
 			isa = PBXGroup;
 			children = (
-				2422DC7725F08B9D00C58CC5 /* ColorRoutineModel.swift */,
 				2422DC7C25F0BD3900C58CC5 /* ColorRoutinesData.swift */,
 				2422DC7F25F0CAFA00C58CC5 /* ColorRoutineSettings.swift */,
 			);
@@ -334,7 +331,6 @@
 				24A530FC25ECD48D00EE3933 /* FormRowLinkView.swift in Sources */,
 				24585F7725EE30A9002A22D9 /* ProgressBarView.swift in Sources */,
 				24585F6D25EE250C002A22D9 /* RoutinesItemView.swift in Sources */,
-				2422DC7825F08B9D00C58CC5 /* ColorRoutineModel.swift in Sources */,
 				247193E625EDCF8700748C0C /* ThemeData.swift in Sources */,
 				247193E325EDCECF00748C0C /* ThemeModel.swift in Sources */,
 				2459160625E9285F00871715 /* Persistence.swift in Sources */,

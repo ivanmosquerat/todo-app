@@ -20,6 +20,12 @@ enum Colors: CaseIterable{
     case amber
     case indigo
     case teal
+    case darkOrange
+    case darkPurple
+    case green
+    case lightBlue
+    case yellow
+    case magenta
     
     var backgroundColor: String {
         switch self {
@@ -33,7 +39,12 @@ enum Colors: CaseIterable{
         case .amber:    return "Amber"
         case .indigo:   return "Indigo"
         case .teal:     return "Teal"
-        
+        case .darkOrange: return "DarkOrange"
+        case .darkPurple: return "DarkPurple"
+        case .green:    return "Green"
+        case .lightBlue: return "LightBlue"
+        case .yellow:   return "Yellow"
+        case .magenta:   return "Magenta"
         }
     }
     
@@ -49,7 +60,12 @@ enum Colors: CaseIterable{
         case .amber:    return "Border\(Colors.amber.backgroundColor)"
         case .indigo:   return "Border\(Colors.indigo.backgroundColor)"
         case .teal:     return "Border\(Colors.teal.backgroundColor)"
-            
+        case .darkOrange: return "Border\(Colors.darkOrange.backgroundColor)"
+        case .darkPurple: return "Border\(Colors.darkPurple.backgroundColor)"
+        case .green:    return "Border\(Colors.green.backgroundColor)"
+        case .lightBlue: return "Border\(Colors.lightBlue.backgroundColor)"
+        case .yellow:   return "Border\(Colors.yellow.backgroundColor)"
+        case .magenta:   return "Border\(Colors.magenta.backgroundColor)"
         }
     }
 }

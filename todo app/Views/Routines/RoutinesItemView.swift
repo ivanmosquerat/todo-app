@@ -19,7 +19,7 @@ struct RoutinesItemView: View {
         VStack(alignment: .leading){
             HStack {
                 Text(routine.name ?? "Unknown")
-                    .font(.title)
+                    .font(.title2)
                     .fontWeight(.semibold)
                 
                 Spacer()
