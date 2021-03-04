@@ -20,13 +20,21 @@ struct RoutinesListView: View {
         NavigationView{
             
             VStack {
-                List(0..<2) { item in
+                List{
                     
-                    RoutinesItemView()
+                    ForEach(0..<2){ item in
+                        
+                        RoutinesItemView()
+                    }
+                    .onDelete(perform: { indexSet in
+                        //DELETE
+                    })
+                    
                 }//: List
                 .listStyle(InsetListStyle())
+                
             }//: VStack
-            .navigationBarTitle("Routines")
+            .navigationBarTitle("Routines", displayMode: .inline)
             
             .overlay(
             

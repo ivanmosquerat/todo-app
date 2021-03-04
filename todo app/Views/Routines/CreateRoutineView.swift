@@ -9,10 +9,15 @@ import SwiftUI
 
 struct CreateRoutineView: View {
     // MARK: - Properties
+    @Environment(\.managedObjectContext) var viewContext
     @Environment(\.presentationMode) var presentationMode
-    @State private var name: String = ""
+    
     @State private var gridLayout: [GridItem] = [GridItem(.flexible()), GridItem(.flexible())]
     @State private var isDaySelected: Bool = false
+    
+    @State private var name: String = ""
+    @State private var daysSelected: [String] = []
+    @State private var colorSelected: String = ""
     
     @ObservedObject var theme = ThemeSettings.shared
     
@@ -57,9 +62,11 @@ struct CreateRoutineView: View {
                         
                         LazyHGrid(rows: gridLayout, alignment: .center , spacing: 12, content: {
                             
-                            ForEach(0..<14){ item in
+                            
+                            ForEach(Colors.allCases, id:\.self){ color in
+                                
                                 RoundedRectangle(cornerRadius: 12)
-                                    .fill(Color.blue)
+                                    .fill(Color(color.color))
                                     .frame(width: 45, height: 45, alignment: .center)
                             }
                             
@@ -68,9 +75,25 @@ struct CreateRoutineView: View {
                     .frame(width: .infinity, height: 100, alignment: .center)
                     
                     
-                    
                     Button(action: {
-                        print("create routine")
+                        
+                        if name != ""{
+                            let routine = Routine(context: viewContext)
+                            routine.name = name
+                            routine.color = colorSelected
+                            routine.days = daysSelected
+                            
+                            do{
+                                try viewContext.save()
+                            }catch{
+                                //: TODO: Handle error
+                                print(error)
+                            }
+                        }else{
+                            return
+                        }
+                        
+                        presentationMode.wrappedValue.dismiss()
                         
                     }, label: {
                         Text("Create Routine")
@@ -108,6 +131,7 @@ struct CreateRoutineView: View {
 struct CreateRoutineView_Previews: PreviewProvider {
     static var previews: some View {
         CreateRoutineView()
+            .environment(\.managedObjectContext, PersistenceController.shared.container.viewContext)
             .previewDevice("iPhone 12")
     }
 }

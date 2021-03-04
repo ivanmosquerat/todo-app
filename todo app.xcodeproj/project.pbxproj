@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2422DC7825F08B9D00C58CC5 /* ColorRoutineModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2422DC7725F08B9D00C58CC5 /* ColorRoutineModel.swift */; };
 		24585F6D25EE250C002A22D9 /* RoutinesItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24585F6C25EE250C002A22D9 /* RoutinesItemView.swift */; };
 		24585F7725EE30A9002A22D9 /* ProgressBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24585F7625EE30A9002A22D9 /* ProgressBarView.swift */; };
 		245915FD25E9285B00871715 /* todo_appApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245915FC25E9285B00871715 /* todo_appApp.swift */; };
@@ -20,6 +21,7 @@
 		247193E325EDCECF00748C0C /* ThemeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 247193E225EDCECF00748C0C /* ThemeModel.swift */; };
 		247193E625EDCF8700748C0C /* ThemeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 247193E525EDCF8700748C0C /* ThemeData.swift */; };
 		247193E925EDD0F300748C0C /* ThemeSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 247193E825EDD0F300748C0C /* ThemeSettings.swift */; };
+		2473D3EB25F07D0E009CCED5 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2473D3EA25F07D0E009CCED5 /* Constants.swift */; };
 		2473E61225E9F58A005E90F7 /* AddTodoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2473E61125E9F58A005E90F7 /* AddTodoView.swift */; };
 		24A530F925ECC92B00EE3933 /* FormRowStaticView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A530F825ECC92B00EE3933 /* FormRowStaticView.swift */; };
 		24A530FC25ECD48D00EE3933 /* FormRowLinkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A530FB25ECD48D00EE3933 /* FormRowLinkView.swift */; };
@@ -34,11 +36,13 @@
 		24A5311325ECF01700EE3933 /* Blue Dark.png in Resources */ = {isa = PBXBuildFile; fileRef = 24A5310A25ECF01700EE3933 /* Blue Dark.png */; };
 		24A5311425ECF01700EE3933 /* Blue.png in Resources */ = {isa = PBXBuildFile; fileRef = 24A5310B25ECF01700EE3933 /* Blue.png */; };
 		24AF4FA425EFC75D00646B60 /* DayButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AF4FA325EFC75D00646B60 /* DayButtonView.swift */; };
+		24AF4FA725EFCCB600646B60 /* RoutineDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AF4FA625EFCCB500646B60 /* RoutineDetailView.swift */; };
 		24D0DEB925EF916D00691E37 /* RoutinesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24D0DEB825EF916D00691E37 /* RoutinesListView.swift */; };
 		24D0DEBD25EFA46100691E37 /* CreateRoutineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24D0DEBC25EFA46100691E37 /* CreateRoutineView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2422DC7725F08B9D00C58CC5 /* ColorRoutineModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorRoutineModel.swift; sourceTree = "<group>"; };
 		24585F6C25EE250C002A22D9 /* RoutinesItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutinesItemView.swift; sourceTree = "<group>"; };
 		24585F7625EE30A9002A22D9 /* ProgressBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBarView.swift; sourceTree = "<group>"; };
 		245915F925E9285B00871715 /* todo app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "todo app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -54,6 +58,7 @@
 		247193E225EDCECF00748C0C /* ThemeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeModel.swift; sourceTree = "<group>"; };
 		247193E525EDCF8700748C0C /* ThemeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeData.swift; sourceTree = "<group>"; };
 		247193E825EDD0F300748C0C /* ThemeSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeSettings.swift; sourceTree = "<group>"; };
+		2473D3EA25F07D0E009CCED5 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		2473E61125E9F58A005E90F7 /* AddTodoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTodoView.swift; sourceTree = "<group>"; };
 		24A530F825ECC92B00EE3933 /* FormRowStaticView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormRowStaticView.swift; sourceTree = "<group>"; };
 		24A530FB25ECD48D00EE3933 /* FormRowLinkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormRowLinkView.swift; sourceTree = "<group>"; };
@@ -68,6 +73,7 @@
 		24A5310A25ECF01700EE3933 /* Blue Dark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Blue Dark.png"; sourceTree = "<group>"; };
 		24A5310B25ECF01700EE3933 /* Blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Blue.png; sourceTree = "<group>"; };
 		24AF4FA325EFC75D00646B60 /* DayButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayButtonView.swift; sourceTree = "<group>"; };
+		24AF4FA625EFCCB500646B60 /* RoutineDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineDetailView.swift; sourceTree = "<group>"; };
 		24D0DEB825EF916D00691E37 /* RoutinesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutinesListView.swift; sourceTree = "<group>"; };
 		24D0DEBC25EFA46100691E37 /* CreateRoutineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateRoutineView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -83,9 +89,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2422DC7625F08A5A00C58CC5 /* ColorsRoutine */ = {
+			isa = PBXGroup;
+			children = (
+				2422DC7725F08B9D00C58CC5 /* ColorRoutineModel.swift */,
+			);
+			path = ColorsRoutine;
+			sourceTree = "<group>";
+		};
 		24585F6425EE20FE002A22D9 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				2422DC7625F08A5A00C58CC5 /* ColorsRoutine */,
+				247193E025EDCE1200748C0C /* Theme */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -132,6 +148,7 @@
 				24585F6C25EE250C002A22D9 /* RoutinesItemView.swift */,
 				24D0DEB825EF916D00691E37 /* RoutinesListView.swift */,
 				24D0DEBC25EFA46100691E37 /* CreateRoutineView.swift */,
+				24AF4FA625EFCCB500646B60 /* RoutineDetailView.swift */,
 			);
 			path = Routines;
 			sourceTree = "<group>";
@@ -139,6 +156,7 @@
 		24585F6F25EE2681002A22D9 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				2473D3EA25F07D0E009CCED5 /* Constants.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -169,7 +187,6 @@
 				24A530FE25ECECF500EE3933 /* Icons */,
 				24585F6425EE20FE002A22D9 /* Models */,
 				2459160225E9285F00871715 /* Preview Content */,
-				247193E025EDCE1200748C0C /* Theme */,
 				2459160725E9285F00871715 /* todo_app.xcdatamodeld */,
 				24585F6F25EE2681002A22D9 /* Utilities */,
 				2473E60E25E9F571005E90F7 /* Views */,
@@ -311,14 +328,17 @@
 				24A530FC25ECD48D00EE3933 /* FormRowLinkView.swift in Sources */,
 				24585F7725EE30A9002A22D9 /* ProgressBarView.swift in Sources */,
 				24585F6D25EE250C002A22D9 /* RoutinesItemView.swift in Sources */,
+				2422DC7825F08B9D00C58CC5 /* ColorRoutineModel.swift in Sources */,
 				247193E625EDCF8700748C0C /* ThemeData.swift in Sources */,
 				247193E325EDCECF00748C0C /* ThemeModel.swift in Sources */,
 				2459160625E9285F00871715 /* Persistence.swift in Sources */,
 				245915FF25E9285B00871715 /* ContentView.swift in Sources */,
 				245B489B25EB62770094C1AB /* EmptyListView.swift in Sources */,
 				245915FD25E9285B00871715 /* todo_appApp.swift in Sources */,
+				2473D3EB25F07D0E009CCED5 /* Constants.swift in Sources */,
 				2459160925E9285F00871715 /* todo_app.xcdatamodeld in Sources */,
 				2473E61225E9F58A005E90F7 /* AddTodoView.swift in Sources */,
+				24AF4FA725EFCCB600646B60 /* RoutineDetailView.swift in Sources */,
 				24A5310125ECEFA600EE3933 /* EditTaskView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -47,9 +47,9 @@ struct AddTodoView: View {
                     Button(action: {
                         
                         if self.name != "" {
-                            let todo = Task(context: self.viewContext)
-                            todo.name = self.name
-                            todo.priority = self.priority
+                            let task = Task(context: self.viewContext)
+                            task.name = self.name
+                            task.priority = self.priority
                             
                             do{
                                 try self.viewContext.save()
