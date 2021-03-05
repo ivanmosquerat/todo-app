@@ -42,6 +42,7 @@ struct RoutinesListView: View {
                     isShowingCreateRoutine.toggle()
                 }, label: {
                     Image(systemName: "plus")
+                        .imageScale(.large)
                 })
             )
             

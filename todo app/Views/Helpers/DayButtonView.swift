@@ -21,17 +21,13 @@ struct DayButtonView: View {
         
         Button(action:{
             
-            
             if !daysRoutine.days.contains(day) && !isDaySelected{
-                
                 daysRoutine.days.append(day)
-                
             }else{
-                //daysRoutine.days.remo
+                daysRoutine.days.removeLast(1)
             }
             
             isDaySelected.toggle()
-            
             
         }){
 
