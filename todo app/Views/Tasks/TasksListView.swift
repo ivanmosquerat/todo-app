@@ -21,7 +21,7 @@ struct TasksListView: View {
     // MARK: - Body
     var body: some View {
         
-        NavigationView {
+        //NavigationView {
             ZStack{
                 
                 List{
@@ -53,36 +53,36 @@ struct TasksListView: View {
                 }//: List
                 .listStyle(InsetListStyle())
                 .navigationBarTitle("Tasks", displayMode: .inline)
-                .navigationBarItems(leading:
-                    Button(action: {
-                        // TODO: - SORT FUCNTION
-                    }){
-                        Image(systemName: "arrow.up.arrow.down")
+                .navigationBarItems(
+
+//                    leading:
+//                    Button(action: {
+//                        // TODO: - SORT FUCNTION
+//                    }){
+//                        Image(systemName: "arrow.up.arrow.down")
+//                            .imageScale(.large)
+//                    },
+
+                    trailing:
+
+                        Button(action: {
+                            showingAddTodoView.toggle()
+                        }){
+                        Image(systemName: "plus")
                             .imageScale(.large)
-                    }
-                    
-                    ,trailing:
-                        
-                        HStack {
-                            
-                            Button(action: {
-                            // TODO: - SORT FUCNTION
-                            }){
-                            Image(systemName: "plus")
-                                .imageScale(.large)
-                            }
-                        
                         }
-                )
+                        .sheet(isPresented: $showingAddTodoView, content: {
+                            AddTodoView()
+                                .environment(\.managedObjectContext, self.viewContext)
+                        })
+                    )//: NavItem
                 
                 // MARK: - No task items
                 if tasks.count == 0 {
                     EmptyListView()
                 }
-                
             }//: ZStack
-            
-        }//: Navigation
+        //}//: Navigation
     }
     
     // MARK: - Functions
