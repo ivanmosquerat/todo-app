@@ -34,12 +34,9 @@ struct EmptyListView: View {
                     .foregroundColor(self.themes[theme.themeSettings].themeColor)
             }//: VStack
             .padding(.horizontal)
-            .opacity(isAnimated ? 1 : 0)
-            .offset(y: isAnimated ? 0 : -50)
-            .animation(.easeOut(duration: 1.5))
-            .onAppear(perform: {
-                self.isAnimated.toggle()
-            })
+            .opacity(1)
+            .offset(y: 0 )
+            
         }//: ZStack
         .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
         .background(Color("ColorBase"))

@@ -28,7 +28,9 @@ struct RoutinesListView: View {
                     
                     ForEach(self.routines, id: \.self){ routine in
                         
-                        RoutinesItemView(routine: routine)
+                        NavigationLink(destination: TasksListView()) {
+                            RoutinesItemView(routine: routine)
+                        }
                     }
                     .onDelete(perform: deleteRoutine)
                     

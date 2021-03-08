@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		24005FBB25F225C000EE9F7D /* TasksListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24005FBA25F225C000EE9F7D /* TasksListView.swift */; };
 		2422DC7D25F0BD3900C58CC5 /* ColorRoutinesData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2422DC7C25F0BD3900C58CC5 /* ColorRoutinesData.swift */; };
 		2422DC8025F0CAFA00C58CC5 /* ColorRoutineSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2422DC7F25F0CAFA00C58CC5 /* ColorRoutineSettings.swift */; };
 		2422DC8A25F1080E00C58CC5 /* DaysRoutineData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2422DC8925F1080E00C58CC5 /* DaysRoutineData.swift */; };
@@ -27,6 +28,10 @@
 		247193E925EDD0F300748C0C /* ThemeSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 247193E825EDD0F300748C0C /* ThemeSettings.swift */; };
 		2473D3EB25F07D0E009CCED5 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2473D3EA25F07D0E009CCED5 /* Constants.swift */; };
 		2473E61225E9F58A005E90F7 /* AddTodoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2473E61125E9F58A005E90F7 /* AddTodoView.swift */; };
+		2478C5C025F32E0400F331F5 /* Routine+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2478C5BC25F32E0400F331F5 /* Routine+CoreDataClass.swift */; };
+		2478C5C125F32E0400F331F5 /* Routine+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2478C5BD25F32E0400F331F5 /* Routine+CoreDataProperties.swift */; };
+		2478C5C225F32E0400F331F5 /* Task+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2478C5BE25F32E0400F331F5 /* Task+CoreDataClass.swift */; };
+		2478C5C325F32E0400F331F5 /* Task+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2478C5BF25F32E0400F331F5 /* Task+CoreDataProperties.swift */; };
 		24A530F925ECC92B00EE3933 /* FormRowStaticView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A530F825ECC92B00EE3933 /* FormRowStaticView.swift */; };
 		24A530FC25ECD48D00EE3933 /* FormRowLinkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A530FB25ECD48D00EE3933 /* FormRowLinkView.swift */; };
 		24A5310125ECEFA600EE3933 /* EditTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A5310025ECEFA600EE3933 /* EditTaskView.swift */; };
@@ -46,6 +51,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		24005FBA25F225C000EE9F7D /* TasksListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksListView.swift; sourceTree = "<group>"; };
 		2422DC7C25F0BD3900C58CC5 /* ColorRoutinesData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorRoutinesData.swift; sourceTree = "<group>"; };
 		2422DC7F25F0CAFA00C58CC5 /* ColorRoutineSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorRoutineSettings.swift; sourceTree = "<group>"; };
 		2422DC8925F1080E00C58CC5 /* DaysRoutineData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaysRoutineData.swift; sourceTree = "<group>"; };
@@ -68,6 +74,10 @@
 		247193E825EDD0F300748C0C /* ThemeSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeSettings.swift; sourceTree = "<group>"; };
 		2473D3EA25F07D0E009CCED5 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		2473E61125E9F58A005E90F7 /* AddTodoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTodoView.swift; sourceTree = "<group>"; };
+		2478C5BC25F32E0400F331F5 /* Routine+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Routine+CoreDataClass.swift"; sourceTree = "<group>"; };
+		2478C5BD25F32E0400F331F5 /* Routine+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Routine+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		2478C5BE25F32E0400F331F5 /* Task+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Task+CoreDataClass.swift"; sourceTree = "<group>"; };
+		2478C5BF25F32E0400F331F5 /* Task+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Task+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		24A530F825ECC92B00EE3933 /* FormRowStaticView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormRowStaticView.swift; sourceTree = "<group>"; };
 		24A530FB25ECD48D00EE3933 /* FormRowLinkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormRowLinkView.swift; sourceTree = "<group>"; };
 		24A5310025ECEFA600EE3933 /* EditTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTaskView.swift; sourceTree = "<group>"; };
@@ -148,6 +158,7 @@
 			children = (
 				2473E61125E9F58A005E90F7 /* AddTodoView.swift */,
 				24A5310025ECEFA600EE3933 /* EditTaskView.swift */,
+				24005FBA25F225C000EE9F7D /* TasksListView.swift */,
 			);
 			path = Tasks;
 			sourceTree = "<group>";
@@ -207,6 +218,7 @@
 		245915FB25E9285B00871715 /* todo app */ = {
 			isa = PBXGroup;
 			children = (
+				2478C5C525F32E2F00F331F5 /* Core Data */,
 				2422DC9025F12ACC00C58CC5 /* Extensions */,
 				2459160A25E9285F00871715 /* Info.plist */,
 				2459160525E9285F00871715 /* Persistence.swift */,
@@ -251,6 +263,17 @@
 				24585F6625EE2131002A22D9 /* Settings */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		2478C5C525F32E2F00F331F5 /* Core Data */ = {
+			isa = PBXGroup;
+			children = (
+				2478C5BC25F32E0400F331F5 /* Routine+CoreDataClass.swift */,
+				2478C5BD25F32E0400F331F5 /* Routine+CoreDataProperties.swift */,
+				2478C5BE25F32E0400F331F5 /* Task+CoreDataClass.swift */,
+				2478C5BF25F32E0400F331F5 /* Task+CoreDataProperties.swift */,
+			);
+			path = "Core Data";
 			sourceTree = "<group>";
 		};
 		24A530FE25ECECF500EE3933 /* Icons */ = {
@@ -351,7 +374,9 @@
 				24D0DEBD25EFA46100691E37 /* CreateRoutineView.swift in Sources */,
 				245B489F25EB8F0A0094C1AB /* SettingsView.swift in Sources */,
 				24D0DEB925EF916D00691E37 /* RoutinesListView.swift in Sources */,
+				2478C5C125F32E0400F331F5 /* Routine+CoreDataProperties.swift in Sources */,
 				247193E925EDD0F300748C0C /* ThemeSettings.swift in Sources */,
+				2478C5C225F32E0400F331F5 /* Task+CoreDataClass.swift in Sources */,
 				2422DC8A25F1080E00C58CC5 /* DaysRoutineData.swift in Sources */,
 				24A530F925ECC92B00EE3933 /* FormRowStaticView.swift in Sources */,
 				24AF4FA425EFC75D00646B60 /* DayButtonView.swift in Sources */,
@@ -368,9 +393,12 @@
 				2422DC7D25F0BD3900C58CC5 /* ColorRoutinesData.swift in Sources */,
 				2473D3EB25F07D0E009CCED5 /* Constants.swift in Sources */,
 				2422DC8E25F10AB700C58CC5 /* DaysRoutine.swift in Sources */,
+				24005FBB25F225C000EE9F7D /* TasksListView.swift in Sources */,
 				2459160925E9285F00871715 /* todo_app.xcdatamodeld in Sources */,
 				2473E61225E9F58A005E90F7 /* AddTodoView.swift in Sources */,
+				2478C5C025F32E0400F331F5 /* Routine+CoreDataClass.swift in Sources */,
 				24AF4FA725EFCCB600646B60 /* RoutineDetailView.swift in Sources */,
+				2478C5C325F32E0400F331F5 /* Task+CoreDataProperties.swift in Sources */,
 				24A5310125ECEFA600EE3933 /* EditTaskView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
