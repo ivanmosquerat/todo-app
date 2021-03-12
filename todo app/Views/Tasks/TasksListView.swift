@@ -17,6 +17,7 @@ struct TasksListView: View {
     @ObservedObject var theme = ThemeSettings.shared
     
     var themes: [Theme] = themeData
+    var routine: Routine
     
     // MARK: - Body
     var body: some View {
@@ -119,7 +120,7 @@ struct TasksListView: View {
 // MARK: - Preview
 struct TasksListView_Previews: PreviewProvider {
     static var previews: some View {
-        TasksListView()
+        TasksListView(routine: Routine())
             .environment(\.managedObjectContext, PersistenceController.shared.container.viewContext)
     }
 }

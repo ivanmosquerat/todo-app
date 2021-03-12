@@ -25,7 +25,11 @@ struct ProgressBarView: View {
                 .padding(.leading, 1)
                 .onAppear(perform: {
                     withAnimation(.easeIn(duration: 1)){
-                        isBarAnimating.toggle()
+                        
+                        if !isBarAnimating{
+                            isBarAnimating.toggle()
+                        }
+                        
                     }
                 })
             
@@ -38,6 +42,9 @@ struct ProgressBarView: View {
                         
                 )
         }//: ZStack
+        .onAppear(perform: {
+            /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Code@*/ /*@END_MENU_TOKEN@*/
+        })
     }
     
     func setTextColor(value: Double) -> Color {

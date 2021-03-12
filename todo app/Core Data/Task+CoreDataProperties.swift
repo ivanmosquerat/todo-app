@@ -22,6 +22,26 @@ extension Task {
     @NSManaged public var name: String?
     @NSManaged public var priority: String?
     @NSManaged public var routine: Routine?
+    
+    public var wrappedCompleted: Bool {
+        completed
+    }
+    
+    public var wrappedDate: Date{
+        date ?? Date()
+    }
+    
+    public var wrappedName: String{
+        name ?? "Default task"
+    }
+    
+    public var wrappedRoutine: Routine{
+        routine ?? Routine()
+    }
+    
+    public var wrappedPriority: String{
+        priority ?? "Normal"
+    }
 
 }
 

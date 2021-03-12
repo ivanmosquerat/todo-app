@@ -21,6 +21,26 @@ extension Routine {
     @NSManaged public var id: UUID?
     @NSManaged public var name: String?
     @NSManaged public var task: NSSet?
+    
+    public var wrappedColor: String {
+        color ?? "Orange"
+    }
+    
+    public var wrappedDays: [String] {
+        days ?? []
+    }
+    
+    public var wrappedName: String {
+        name ?? "Default routine"
+    }
+    
+    public var taskArray: [Task]{
+        let set = task as? Set<Task> ?? []
+        
+        return set.sorted {
+            $0.wrappedName < $1.wrappedName
+        }
+    }
 
 }
 

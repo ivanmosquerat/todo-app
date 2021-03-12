@@ -21,6 +21,7 @@ struct AddTodoView: View {
     @ObservedObject var theme = ThemeSettings.shared
     
     var themes: [Theme] = themeData
+    var routine: Routine
     let priorities = ["High", "Normal", "Low"]
     
     // MARK: - Body
@@ -105,7 +106,7 @@ struct AddTodoView: View {
 // MARK: - Preview
 struct AddTodoView_Previews: PreviewProvider {
     static var previews: some View {
-        AddTodoView()
+        AddTodoView(routine: Routine())
             .preferredColorScheme(.dark)
             .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
     }

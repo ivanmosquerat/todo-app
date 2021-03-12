@@ -18,6 +18,7 @@ struct RoutinesListView: View {
     
     var themes: [Theme] = themeData
     
+    
     // MARK: - Body
     var body: some View {
         
@@ -28,7 +29,7 @@ struct RoutinesListView: View {
                     
                     ForEach(self.routines, id: \.self){ routine in
                         
-                        NavigationLink(destination: TasksListView()) {
+                        NavigationLink(destination: TasksListView(routine: routine)) {
                             RoutinesItemView(routine: routine)
                         }
                     }
