@@ -10,7 +10,7 @@ import SwiftUI
 struct SettingsView: View {
     // MARK: - Properties
     @Environment(\.presentationMode) var presentationMode
-    @EnvironmentObject var iconSettings: IconName
+    //@EnvironmentObject var iconSettings: IconName
     
     let themes: [Theme] = themeData
     @ObservedObject var theme = ThemeSettings.shared
@@ -24,66 +24,66 @@ struct SettingsView: View {
                 Form{
                     
                     // MARK: - Section 1
-                    Section(header: Text("App icon")){
-                        
-                        Picker(selection: $iconSettings.currentIndex, label:
-                                
-                                HStack {
-                                    ZStack {
-                                        
-                                        RoundedRectangle(cornerRadius: 8, style: .continuous)
-                                            .strokeBorder(Color.primary, lineWidth: 2)
-                                            
-                                        Image(systemName: "paintbrush")
-                                            .font(.system(size: 28, weight: .regular, design: .default))
-                                            .foregroundColor(Color.primary)
-                                    }
-                                    .frame(width: 44, height: 44)
-                                    
-                                    Text("App icons".uppercased())
-                                        .fontWeight(.bold)
-                                        .foregroundColor(Color.primary)
-                                })//: Label
-                        {
-                            ForEach(0..<iconSettings.iconNames.count){ index in
-                                
-                                HStack{
-                                    Image(uiImage: UIImage(named: self.iconSettings.iconNames[index] ?? "Blue") ?? UIImage())
-                                        .renderingMode(.original)
-                                        .resizable()
-                                        .scaledToFit()
-                                        .frame(width: 44, height: 44)
-                                        .cornerRadius(8)
-                                    
-                                    Spacer().frame(width: 8)
-                                    
-                                    Text(iconSettings.iconNames[index] ?? "Blue")
-                                        .frame(alignment: .leading)
-                                        
-                                }//: HStack
-                                .padding(3)
-                            }//: Loop
-                        }//: Picker
-                        .onReceive([iconSettings.currentIndex].publisher.first()){ (value) in
-                            
-                            //Index current icon.
-                            let index = iconSettings.iconNames.firstIndex(of: UIApplication.shared.alternateIconName) ?? 0
-                            
-                            // Set if the selected value is different.
-                            if index != value {
-                                UIApplication.shared.setAlternateIconName(self.iconSettings.iconNames[value]) { error in
-                                    
-                                    if let error = error {
-                                        print(error.localizedDescription)
-                                    }else{
-                                        print("Success!")
-                                    }
-                                }
-                            }
-                        }
-                    }//: Section 1
-                    .padding(.vertical, 3)
-                    
+//                    Section(header: Text("App icon")){
+//
+//                        Picker(selection: $iconSettings.currentIndex, label:
+//
+//                                HStack {
+//                                    ZStack {
+//
+//                                        RoundedRectangle(cornerRadius: 8, style: .continuous)
+//                                            .strokeBorder(Color.primary, lineWidth: 2)
+//
+//                                        Image(systemName: "paintbrush")
+//                                            .font(.system(size: 28, weight: .regular, design: .default))
+//                                            .foregroundColor(Color.primary)
+//                                    }
+//                                    .frame(width: 44, height: 44)
+//
+//                                    Text("App icons".uppercased())
+//                                        .fontWeight(.bold)
+//                                        .foregroundColor(Color.primary)
+//                                })//: Label
+//                        {
+//                            ForEach(0..<iconSettings.iconNames.count){ index in
+//
+//                                HStack{
+//                                    Image(uiImage: UIImage(named: self.iconSettings.iconNames[index] ?? "Blue") ?? UIImage())
+//                                        .renderingMode(.original)
+//                                        .resizable()
+//                                        .scaledToFit()
+//                                        .frame(width: 44, height: 44)
+//                                        .cornerRadius(8)
+//
+//                                    Spacer().frame(width: 8)
+//
+//                                    Text(iconSettings.iconNames[index] ?? "Blue")
+//                                        .frame(alignment: .leading)
+//
+//                                }//: HStack
+//                                .padding(3)
+//                            }//: Loop
+//                        }//: Picker
+//                        .onReceive([iconSettings.currentIndex].publisher.first()){ (value) in
+//
+//                            //Index current icon.
+//                            let index = iconSettings.iconNames.firstIndex(of: UIApplication.shared.alternateIconName) ?? 0
+//
+//                            // Set if the selected value is different.
+//                            if index != value {
+//                                UIApplication.shared.setAlternateIconName(self.iconSettings.iconNames[value]) { error in
+//
+//                                    if let error = error {
+//                                        print(error.localizedDescription)
+//                                    }else{
+//                                        print("Success!")
+//                                    }
+//                                }
+//                            }
+//                        }
+//                    }//: Section 1
+//                    .padding(.vertical, 3)
+//
                     // MARK: - Section 2
                     Section(
                         header:
@@ -115,7 +115,7 @@ struct SettingsView: View {
                             }
                         }
                     }//: Section 2
-                    .padding(.vertical, 3)
+                    .padding(.vertical, 10)
                     
                     
                     // MARK: - Section 3
@@ -172,6 +172,6 @@ struct SettingsView_Previews: PreviewProvider {
     static var previews: some View {
         SettingsView()
             .preferredColorScheme(.light)
-            .environmentObject(IconName())
+            //.environmentObject(IconName())
     }
 }

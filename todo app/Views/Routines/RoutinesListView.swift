@@ -12,7 +12,8 @@ struct RoutinesListView: View {
     // MARK: - Properties
     @Environment(\.managedObjectContext) private var viewContext
     @ObservedObject var theme = ThemeSettings.shared
-    @State var isShowingCreateRoutine: Bool = false
+    @State private var isShowingCreateRoutine: Bool = false
+    @State private var isShowingSettingsView: Bool = false
     
     @FetchRequest(entity: Routine.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \Routine.name, ascending: true)]) var routines: FetchedResults<Routine>
     
@@ -40,13 +41,31 @@ struct RoutinesListView: View {
                 
             }//: VStack
             .navigationBarTitle("Routines", displayMode: .inline)
-            .navigationBarItems(trailing:
+            .navigationBarItems(
+                leading:
+                    Button(action:{
+                        isShowingSettingsView.toggle()
+                    }, label: {
+                    Image(systemName: "gear")
+                        .accentColor(themes[theme.themeSettings].themeColor)
+                        .imageScale(.large)
+                })
+                    .sheet(isPresented: $isShowingSettingsView, content: {
+                        SettingsView()
+                    })
+                ,
+                
+                trailing:
                 Button(action: {
                     isShowingCreateRoutine.toggle()
                 }, label: {
                     Image(systemName: "plus")
+                        .accentColor(themes[theme.themeSettings].themeColor)
                         .imageScale(.large)
                 })
+                    .sheet(isPresented: $isShowingCreateRoutine, content: {
+                        CreateRoutineView()
+                    })
             )
             
 //            .overlay(
@@ -72,9 +91,9 @@ struct RoutinesListView: View {
 //                .background(themes[theme.themeSettings].themeColor)
 //                .foregroundColor(.white)
 //                .cornerRadius(8)
-                .sheet(isPresented: $isShowingCreateRoutine, content: {
-                    CreateRoutineView()
-                })
+                
+                
+            
 //                , alignment: .bottom)
         }//: Navigation
     }

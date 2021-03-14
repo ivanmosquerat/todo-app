@@ -22,70 +22,63 @@ struct TasksListView: View {
     // MARK: - Body
     var body: some View {
         
-        
-        //NavigationView {
-            ZStack{
-                
-                List{
-                
-                    ForEach(routine.taskArray, id: \.self){ todo in
-                        HStack{
+         ZStack{
+            
+            List{
+            
+                ForEach(routine.taskArray, id: \.self){ todo in
+                    HStack{
+                        
+                        Text(todo.priority ?? "Undefined")
+                            .font(.footnote)
+                            .foregroundColor(colorize(priority: todo.priority ?? "Normal"))
+                            .padding(3)
+                            .frame(minWidth: 62)
+                            .overlay(
+                                Capsule().stroke(colorize(priority: todo.priority ?? "Normal"), lineWidth: 0.75)
+                            )
+                        
+                        Text(todo.name ?? "Unknown")
+                            .fontWeight(.semibold)
+                        
+                        Spacer()
+                        
+                        Button(action:{
                             
-                            Circle()
-                                .frame(width: 12, height: 12, alignment: .center)
-                                .foregroundColor(colorize(priority: todo.priority ?? "Normal"))
-                            
-                            Text(todo.name ?? "Unknown")
-                                .fontWeight(.semibold)
-                            
-                            Spacer()
-                             
-                            Text(todo.priority ?? "Undefined")
-                                .font(.footnote)
-                                .foregroundColor(Color(UIColor.systemGray2))
-                                .padding(3)
-                                .frame(minWidth: 62)
-                                .overlay(
-                                    Capsule().stroke(Color(UIColor.systemGray2), lineWidth: 0.75)
-                                )
-                        }//: HStack
-                        .padding(.vertical, 10)
-                    }//: Loop
-                    .onDelete(perform: deleteTask)
-                    
-                }//: List
-                .listStyle(InsetListStyle())
-                .navigationBarTitle("Tasks", displayMode: .inline)
-                .navigationBarItems(
-
-//                    leading:
-//                    Button(action: {
-//                        // TODO: - SORT FUCNTION
-//                    }){
-//                        Image(systemName: "arrow.up.arrow.down")
-//                            .imageScale(.large)
-//                    },
-
-                    trailing:
-
-                        Button(action: {
-                            showingAddTodoView.toggle()
                         }){
-                        Image(systemName: "plus")
-                            .imageScale(.large)
+                            
                         }
-                        .sheet(isPresented: $showingAddTodoView, content: {
-                            AddTodoView( routine: routine)
-                                .environment(\.managedObjectContext, self.viewContext)
-                        })
-                    )//: NavItem
+                        
+                        
+                    }//: HStack
+                    .padding(.vertical, 10)
+                }//: Loop
+                .onDelete(perform: deleteTask)
                 
-                // MARK: - No task items
-                if tasks.count == 0 {
-                    EmptyListView()
-                }
-            }//: ZStack
-        //}//: Navigation
+            }//: List
+            .listStyle(InsetListStyle())
+            .navigationBarTitle("Tasks", displayMode: .inline)
+            .navigationBarItems(
+                
+                trailing:
+
+                    Button(action: {
+                        showingAddTodoView.toggle()
+                    }){
+                    Image(systemName: "plus")
+                        .imageScale(.large)
+                    }
+                    .sheet(isPresented: $showingAddTodoView, content: {
+                        AddTodoView( routine: routine)
+                            .environment(\.managedObjectContext, self.viewContext)
+                    })
+                )//: NavItem
+            
+            // MARK: - No task items
+            if tasks.count == 0 {
+                EmptyListView()
+            }
+        }//: ZStack
     }
     
     // MARK: - Functions
@@ -107,6 +100,7 @@ struct TasksListView: View {
     /// - Parameter offsets: <#offsets description#>
     private func deleteTask(at offsets: IndexSet){
         for index in offsets{
+            
             let task = tasks[index]
             viewContext.delete(task)
             

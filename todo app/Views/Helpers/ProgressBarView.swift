@@ -13,6 +13,7 @@ struct ProgressBarView: View {
     @State var isBarAnimating = false
     let widthBar = UIScreen.main.bounds.width - 36
     var colorBackground: String
+    var tasks: [Task]
     
     // MARK: - Body
     var body: some View {
@@ -42,9 +43,7 @@ struct ProgressBarView: View {
                         
                 )
         }//: ZStack
-        .onAppear(perform: {
-            /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Code@*/ /*@END_MENU_TOKEN@*/
-        })
+        
     }
     
     func setTextColor(value: Double) -> Color {
@@ -58,7 +57,7 @@ struct ProgressBarView: View {
 // MARK: - Preview
 struct ProgressBarView_Previews: PreviewProvider {
     static var previews: some View {
-        ProgressBarView(colorBackground: "Teal")
+        ProgressBarView(colorBackground: "Teal", tasks: [])
             .previewLayout(.sizeThatFits)
             
     }

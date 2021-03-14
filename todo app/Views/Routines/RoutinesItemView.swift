@@ -45,7 +45,7 @@ struct RoutinesItemView: View {
             }//: HStack
             .padding(.vertical, 8)
             
-            ProgressBarView(colorBackground: routine.color ?? "Orange")
+            ProgressBarView(colorBackground: routine.color ?? "Orange", tasks: routine.taskArray)
             
         }//: VStack
         .padding(.vertical, 10)
