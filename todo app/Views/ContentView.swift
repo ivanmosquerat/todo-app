@@ -78,8 +78,8 @@ struct ContentView: View {
                 }
             }//: ZStack
             .sheet(isPresented: $showingAddTodoView, content: {
-                AddTodoView()
-                    .environment(\.managedObjectContext, self.viewContext)
+//                AddTodoView()
+//                    .environment(\.managedObjectContext, self.viewContext)
             })
             .overlay(
                 

@@ -22,11 +22,13 @@ struct TasksListView: View {
     // MARK: - Body
     var body: some View {
         
+        
         //NavigationView {
             ZStack{
                 
                 List{
-                    ForEach(self.tasks, id: \.self){ todo in
+                
+                    ForEach(routine.taskArray, id: \.self){ todo in
                         HStack{
                             
                             Circle()
@@ -73,7 +75,7 @@ struct TasksListView: View {
                             .imageScale(.large)
                         }
                         .sheet(isPresented: $showingAddTodoView, content: {
-                            AddTodoView()
+                            AddTodoView( routine: routine)
                                 .environment(\.managedObjectContext, self.viewContext)
                         })
                     )//: NavItem

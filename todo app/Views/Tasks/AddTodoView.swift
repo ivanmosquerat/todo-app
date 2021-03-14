@@ -51,6 +51,9 @@ struct AddTodoView: View {
                             let task = Task(context: self.viewContext)
                             task.name = self.name
                             task.priority = self.priority
+                            task.completed = false
+                            task.date = Date()
+                            task.routine = routine
                             
                             do{
                                 try self.viewContext.save()
